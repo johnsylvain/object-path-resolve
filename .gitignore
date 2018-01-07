@@ -61,5 +61,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# build
+dist
+
 
 # End of https://www.gitignore.io/api/node

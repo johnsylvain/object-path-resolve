@@ -2,16 +2,31 @@
   "name": "object-resolve",
   "version": "1.0.0",
   "description": "Resolve object paths",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "John Sylvain <john.n.sylvain@gmail.com>",
   "license": "MIT",
+  "bundlesize": [
+    {
+      "path": "dist/index.js",
+      "maxSize": "500 b"
+    }
+  ],
   "scripts": {
+    "build": "npm-run-all --silent -p build:main -s size ",
+    "build:main": "microbundle",
+    "size": "strip-json-comments --no-whitespace dist/index.js | gzip-size && bundlesize",
     "test": "jest",
-    "test:watch": "npm run test -- --watchAll"
+    "test:watch": "npm run test -- --watchAll",
+    "release": "npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "jest": "^22.0.4"
+    "bundlesize": "^0.15.3",
+    "gzip-size-cli": "^2.1.0",
+    "jest": "^22.0.4",
+    "microbundle": "^0.2.4",
+    "npm-run-all": "^4.1.2",
+    "strip-json-comments-cli": "^1.0.1"
   }
 }
