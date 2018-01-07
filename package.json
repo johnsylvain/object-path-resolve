@@ -2,7 +2,10 @@
   "name": "object-path-resolve",
   "version": "1.0.0",
   "description": "Resolve object paths",
+  "source": "index.js",
+  "module": "dist/index.es.js",
   "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
   "author": "John Sylvain <john.n.sylvain@gmail.com>",
   "license": "MIT",
   "bundlesize": [
