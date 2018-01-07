@@ -1,5 +1,5 @@
 {
-  "name": "object-resolve",
+  "name": "object-path-resolve",
   "version": "1.0.0",
   "description": "Resolve object paths",
   "main": "dist/index.js",
