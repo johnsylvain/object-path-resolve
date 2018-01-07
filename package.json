@@ -1,0 +1,17 @@
+{
+  "name": "object-resolve",
+  "version": "1.0.0",
+  "description": "Resolve object paths",
+  "main": "index.js",
+  "author": "John Sylvain <john.n.sylvain@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "npm run test -- --watchAll"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.0.4"
+  }
+}
