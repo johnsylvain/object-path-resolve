@@ -1,9 +1,9 @@
-module.exports = function resolve (obj, path) {
+export default function resolve (obj, path) {
   path = path
     .split(/[.\[\]]/g)
-    .filter(i => i !== '')
+    .filter(i => i)
     .map(i => isNaN(i) 
-      ? i.replace(/['"]+/g, '') 
+      ? i.replace(/"([^"]+(?="))"/g, '$1') 
       : parseInt(i)
     )
     
