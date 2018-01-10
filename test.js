@@ -34,4 +34,17 @@ describe('object-resolve', () => {
 
     expect(resolve(obj, '["test-prop"]["test-array"][2]')).toBe('three')
   })
+
+  it('should ignore inner quotes', () => {
+    const obj = {
+      'test-"prop"-value': {
+        'test-array': [
+          'one', 'two', 'three'
+        ]
+      }
+    }
+
+    expect(resolve(obj, '["test-"prop"-value"]["test-array"][2]')).toBe('three')
+    expect(resolve(obj, '[test-"prop"-value]["test-array"][2]')).toBe('three')
+  })
 })

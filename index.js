@@ -3,7 +3,7 @@ export default function resolve (obj, path) {
     .split(/[.\[\]]/g)
     .filter(i => i)
     .map(i => isNaN(i) 
-      ? i.replace(/"([^"]+(?="))"/g, '$1') 
+      ? i.replace(/^["'](.*)["']$/g, '$1') 
       : parseInt(i)
     )
     
