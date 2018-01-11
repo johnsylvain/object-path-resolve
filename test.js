@@ -47,4 +47,14 @@ describe('object-resolve', () => {
     expect(resolve(obj, '["test-"prop"-value"]["test-array"][2]')).toBe('three')
     expect(resolve(obj, '[test-"prop"-value]["test-array"][2]')).toBe('three')
   })
+
+  it('should not mutate original object', () => {
+    const obj = {
+      param: 'test'
+    }
+
+    const _ = resolve(obj, 'param')
+
+    expect(obj).toBe(obj)
+  })
 })
