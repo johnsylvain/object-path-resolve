@@ -29,7 +29,7 @@ describe('object-resolve', () => {
         'test-array': [
           'one', 'two', 'three'
         ]
-      } 
+      }
     }
 
     expect(resolve(obj, '["test-prop"]["test-array"][2]')).toBe('three')
@@ -48,13 +48,23 @@ describe('object-resolve', () => {
     expect(resolve(obj, '[test-"prop"-value]["test-array"][2]')).toBe('three')
   })
 
+  it('should return undefined if does not exist', () => {
+    const obj = {
+      test: 1
+    }
+
+    expect(resolve(obj, 'nope')).toBeUndefined()
+    expect(resolve(obj, 'nope.nope')).toBeUndefined()
+  })
+
   it('should not mutate original object', () => {
     const obj = {
       param: 'test'
     }
 
-    const _ = resolve(obj, 'param')
+    const original = Object.assign({}, obj)
+    resolve(obj, 'param')
 
-    expect(obj).toBe(obj)
+    expect(obj).toEqual(original)
   })
 })
