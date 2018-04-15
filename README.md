@@ -1,9 +1,9 @@
 # object-path-resolve
 > A 200b (gzipped) utility function to resolve object properties with string paths
 
-## Methods
+## API
 ### `resolve(obj: Object, path: String)`
-> Retrieve a value from the `obj` based on the `path` (represented in dot and bracket notation)
+> Retrieve a value from the `obj` based on the `path` (accepts dot and bracket notation)
 
 ## Usage
 ```js
@@ -17,6 +17,7 @@ const obj = {
 }
 
 resolve(obj, 'prop.name') // => 'John'
+resolve(obj, 'prop.age') // => undefined
 resolve(obj, 'arr[1]') // => 'two'
 ```
 
