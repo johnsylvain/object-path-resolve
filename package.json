@@ -1,6 +1,6 @@
 {
   "name": "object-path-resolve",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Utility function to resolve object paths",
   "source": "index.js",
   "module": "dist/index.es.js",
@@ -9,12 +9,10 @@
   "repository": "https://github.com/johnsylvain/object-path-resolve.git",
   "author": "John Sylvain <john.n.sylvain@gmail.com>",
   "license": "MIT",
-  "bundlesize": [
-    {
-      "path": "dist/index.js",
-      "maxSize": "500 b"
-    }
-  ],
+  "bundlesize": [{
+    "path": "dist/index.js",
+    "maxSize": "500 b"
+  }],
   "scripts": {
     "build": "npm-run-all --silent -p build:main -s size ",
     "build:main": "microbundle --entry index.ts",
