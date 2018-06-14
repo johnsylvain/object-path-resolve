@@ -24,6 +24,7 @@
     "release": "npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "devDependencies": {
+    "@types/jest": "^23.1.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "bundlesize": "^0.15.3",
@@ -31,6 +32,25 @@
     "jest": "^22.0.4",
     "microbundle": "^0.2.4",
     "npm-run-all": "^4.1.2",
-    "strip-json-comments-cli": "^1.0.1"
+    "strip-json-comments-cli": "^1.0.1",
+    "ts-jest": "^22.4.6",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(test.ts)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
