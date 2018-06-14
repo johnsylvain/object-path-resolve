@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "npm-run-all --silent -p build:main -s size ",
-    "build:main": "microbundle",
+    "build:main": "microbundle --entry index.ts",
     "size": "strip-json-comments --no-whitespace dist/index.js | gzip-size && bundlesize",
     "test": "jest",
     "test:watch": "npm run test -- --watchAll",
